@@ -13,11 +13,16 @@
     while(count < quantity) {
         var isPrime = true;
         var sqr = Math.sqrt(n);
-        for (var i = 2; i <= sqr && isPrime; i++) {
-            if (n % i == 0) {
-                isPrime = false;
+        if ((n !=2 && n % 2 == 0) || (n != 5 && n % 5 == 0)) {
+            isPrime = false;
+        } else {
+            for (var i = 2; i <= sqr && isPrime; i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                }
             }
         }
+
         if (isPrime) {
             count++;
             sout += "<td>" + n + "</td>";
